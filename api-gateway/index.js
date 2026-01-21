@@ -68,7 +68,7 @@ app.post(
 
   async (req, res) => {
     try {
-      const url = "http://user-service:3000/users/create-user";
+      const url = "https://api-gateway-using-express-docker-user.onrender.com/users/create-user";
       const data = req.body;
       const response = await axios.post(url, data);
       console.log("Response In Api Gateway", res.data);
@@ -90,7 +90,7 @@ app.post(
 ///blogs/create-blog
 app.post("/blogs/create-blog",authenticate, async (req, res) => {
   try {
-    const url = "http://blog-service:8000/blogs/create-blog";
+    const url = "https://api-gateway-using-express-docker-1-blog.onrender.com/blogs/create-blog";
     const data = req.body;
     const response = await axios.post(url, data);
     return res.status(200).json({
