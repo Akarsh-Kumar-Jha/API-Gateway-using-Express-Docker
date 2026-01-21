@@ -14,6 +14,8 @@ services:
     container_name: apigateway-service-container
     ports:
       - "3000:3000"
+    env_file:
+      - ./api-gateway/.env
     depends_on:
       - blog-service
       - user-service
