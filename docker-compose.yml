@@ -1,0 +1,19 @@
+services:
+  blog-service:
+    build: ./blog-service
+    container_name: blog-service-container
+    ports:
+      - "8000:8000"
+  user-service:
+    build: ./user-service
+    container_name: user-service-container
+    ports:
+      - "3001:3000"
+  api-gateway:
+    build: ./api-gateway
+    container_name: apigateway-service-container
+    ports:
+      - "3000:3000"
+    depends_on:
+      - blog-service
+      - user-service
